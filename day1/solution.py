@@ -1,16 +1,13 @@
 SUM_RESULT = 2020
 
 
-def file_read(file_name: str, split_by: str = '') -> str:
+def file_read(file_name: str) -> list:
     with open(file_name) as f:
-        con: str = f.read()
-    if split_by:
-        con: list = con.split(split_by)
-    return con
+        return f.readlines()
 
 
 def main() -> int:
-    numbers: list[int] = list(map(int, file_read('input', '\n')))
+    numbers: list[int] = [int(x) for x in file_read('input')]
     for i in numbers:
         for j in numbers:
             if i + j == SUM_RESULT:
