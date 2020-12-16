@@ -10,7 +10,7 @@ def file_read(file_name: str, split_by: str = '') -> str:
 
 
 def main() -> int:
-    numbers: list[int] = list(map(int, file_read("input", "\n")))
+    numbers: list[int] = list(map(int, file_read('input', '\n')))
     for i in numbers:
         for j in numbers:
             if i + j == SUM_RESULT:
